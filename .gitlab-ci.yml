@@ -1,0 +1,223 @@
+stages:
+  - "transfer-changes-phase"
+  - "functional-tests-phase"
+  - "dev-publish-phase"
+  - "artifact-clean"
+# Trzeba uruchomic wspoldzielony volumin dla raportow oraz artefaktow
+cache:
+#    Cache per project
+  key: "$CI_PROJECT_ID"
+  paths:
+#    Global cache between all builds
+    - "vendor/"
+    - "bin/"
+
+variables:
+  COMPOSER_CACHE_DIR: "/cache/composer"
+
+# PHP 5.6
+
+artifact_build:
+  image: "registry.madkom.pl/ci/php:5.6-ci"
+  stage: "transfer-changes-phase"
+  script:
+    - "phing -f build-dependencies.xml composer-dev"
+    - "phing transfer-changes-phase-artifact-build-backend"
+  except:
+    - "master"
+
+phpspec_php_5_6:
+  image: "registry.madkom.pl/ci/php:5.6-ci"
+  stage: "transfer-changes-phase"
+  script:
+    - "phing -f build-dependencies.xml composer-dev"
+    - "phing transfer-changes-phase-tests-phpspec"
+  except:
+    - "master"
+
+phpunit_php_5_6:
+  image: "registry.madkom.pl/ci/php:5.6-ci"
+  stage: "transfer-changes-phase"
+  script:
+    - "phing -f build-dependencies.xml composer-dev"
+    - "phing transfer-changes-phase-tests-phpunit"
+  except:
+    - "master"
+
+phpcs_php_5_6:
+  image: "registry.madkom.pl/ci/php:5.6-ci"
+  stage: "transfer-changes-phase"
+  script:
+    - "phing -f build-dependencies.xml composer-dev"
+    - "phing transfer-changes-phase-tests-codesniffer"
+  except:
+    - "master"
+
+lint_php_5_6:
+  image: "registry.madkom.pl/ci/php:5.6-ci"
+  stage: "transfer-changes-phase"
+  script:
+    - "phing -f build-dependencies.xml composer-dev"
+    - "phing transfer-changes-phase-tests-lint"
+  except:
+    - "master"
+
+join_coverage_raport:
+  image: "registry.madkom.pl/ci/php:5.6-ci"
+  stage: "functional-tests-phase"
+  script:
+    - "phing -f build-dependencies.xml composer-dev"
+    - "phing functional-tests-phase-join-coverage-raport"
+  only:
+    - "tags"
+  except:
+    - "master"
+
+pdepend:
+  image: "registry.madkom.pl/ci/php:5.6-ci"
+  stage: "dev-publish-phase"
+  script:
+    - "phing -f build-dependencies.xml composer-dev"
+    - "phing dev-publish-phase-phpdepend"
+  only:
+    - "tags"
+  except:
+    - "master"
+
+percentage_coverage:
+  image: "registry.madkom.pl/ci/php:5.6-ci"
+  stage: "dev-publish-phase"
+  script:
+    - "phing -f build-dependencies.xml composer-dev"
+    - "phing dev-publish-phase-coverage-check"
+  only:
+    - "tags"
+  except:
+    - "master"
+
+sonar_runner:
+  image: "registry.madkom.pl/ci/php:5.6-ci-sonar"
+  stage: "dev-publish-phase"
+  script:
+    - "phing -f build-dependencies.xml composer-dev"
+    - "phing dev-publish-phase-sonarqube"
+  only:
+    - "tags"
+  except:
+    - "master"
+
+pact_consumer_behat_with_5_6:
+  image: "registry.madkom.pl/ci/php:5.6-ci-pact-consumer"
+  stage: "functional-tests-phase"
+  script:
+    - "phing -f build-dependencies.xml composer-dev"
+    - "/opt/spawner.sh"
+    - "phing acceptance-tests-phase-behat"
+  only:
+    - "tags"
+  except:
+    - "master"
+
+pact_provider_5_6:
+  image: "registry.madkom.pl/ci/php:5.6-ci-pact-provider"
+  stage: "functional-tests-phase"
+  script:
+    - "phing -f build-dependencies.xml composer-dev"
+    - "/opt/spawner.sh"
+    - "phing acceptance-tests-phase-pact-provider"
+  only:
+    - "tags"
+  except:
+    - "master"
+
+image_publish:
+  image: "registry.madkom.pl/ci/php:5.6-ci-docker"
+  stage: "dev-publish-phase"
+  script:
+    - "phing -f build-dependencies.xml composer-dev"
+    - "phing dev-publish-phase-publish-image"
+  only:
+    - "tags"
+  except:
+    - "master"
+
+# Jezeli wystapil blad nalezy usunac artefakt
+clean_up_on_failure:
+  image: "registry.madkom.pl/ci/php:5.6-ci"
+  stage: "artifact-clean"
+  script:
+    - "phing -f build-dependencies.xml composer-dev"
+    - "phing artifact-clean"
+  when: "on_failure"
+
+# Kiedy nie master artefakt powinnien zostac usuniety
+clean_up:
+  image: "registry.madkom.pl/ci/php:5.6-ci"
+  stage: "artifact-clean"
+  script:
+    - "phing -f build-dependencies.xml composer-dev"
+    - "phing artifact-clean"
+  only:
+    - "tags"
+
+# PHP 7
+
+#phpspec_php_7_0:
+#  image: "registry.madkom.pl/php:7.0-ci"
+#  stage: "transfer-changes-phase"
+#  script:
+#    - "phing -f build-dependencies.xml composer-dev"
+#    - "phing -D compabilityMode=1 transfer-changes-phase-tests-phpspec"
+#  except:
+#    - "master"
+#
+#phpunit_php_7_0:
+#  image: "registry.madkom.pl/php:7.0-ci"
+#  stage: "transfer-changes-phase"
+#  script:
+#    - "phing -f build-dependencies.xml composer-dev"
+#    - "phing -D compabilityMode=1 transfer-changes-phase-tests-phpunit"
+#  except:
+#    - "master"
+#
+#phpcs_php_7_0:
+#  image: "registry.madkom.pl/php:7.0-ci"
+#  stage: "transfer-changes-phase"
+#  script:
+#    - "phing -f build-dependencies.xml composer-dev"
+#    - "phing transfer-changes-phase-tests-codesniffer"
+#  except:
+#    - "master"
+#
+#lint_php_7_0:
+#  image: "registry.madkom.pl/php:7.0-ci"
+#  stage: "transfer-changes-phase"
+#  script:
+#    - "phing -f build-dependencies.xml composer-dev"
+#    - "phing transfer-changes-phase-tests-lint"
+#  except:
+#    - "master"
+#
+#pact_consumer_behat_with_7_0:
+#  image: "registry.madkom.pl/php:7.0-ci-pact"
+#  stage: "functional-tests-phase"
+#  script:
+#    - "phing -f build-dependencies.xml composer-dev"
+#    - "/opt/spawner.sh"
+#    - "phing -D compabilityMode=1 acceptance-tests-phase-behat"
+#  only:
+#    - "tags"
+#  except:
+#    - "master"
+#
+#pact_provider_7_0:
+#  image: "registry.madkom.pl/php:7.0-ci-pact-provider"
+#  stage: "functional-tests-phase"
+#  script:
+#    - "phing -f build-dependencies.xml composer-dev"
+#    - "/opt/spawner.sh"
+#    - "phing acceptance-tests-phase-pact-provider"
+#  only:
+#    - "tags"
+#  except:
+#    - "master"

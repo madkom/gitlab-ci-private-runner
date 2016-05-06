@@ -1,0 +1,11 @@
+default:
+    translation:
+        locale: en
+    formatters:
+        pretty: true
+    autoload:
+            '': %paths.base%/tests/behat/bootstrap
+    suites:
+        domain_features:
+          paths:    [ %paths.base%/tests/behat/features/domain ]
+          contexts: [ DomainContext ]

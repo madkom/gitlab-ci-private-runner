@@ -1,0 +1,18 @@
+extensions:
+    - PhpSpec\Extension\CodeCoverageExtension
+    - Knp\PhpSpec\WellDone\Extension
+
+suites:
+  types:
+    namespace: Madkom
+    psr4_prefix: Madkom
+    spec_path: tests
+
+knp.welldone.exclusion:
+    - "*Controller"
+    - "*Test"
+
+code_coverage:
+#   Nie zmieniac wartosci. Modyfikowane przez phinga na Continues Integration
+    output: TO_REPLACE_COVERAGE/phpspec.cov
+    format: php

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<project name="madkom-ci" description="Madkom Continues Integration" default="transfer-changes-phase-artifact-build">
+    <import file="vendor/madkom/continuous-integration/build.xml"/>
+</project>

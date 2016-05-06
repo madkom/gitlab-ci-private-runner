@@ -1,0 +1,90 @@
+stages:
+  - "transfer-changes-phase"
+  - "functional-tests-phase"
+  - "dev-publish-phase"
+  - "artifact-clean"
+# Trzeba uruchomic wspoldzielony volumin dla raportow oraz artefaktow
+cache:
+#    Cache per project
+  key: "$CI_PROJECT_ID"
+  paths:
+#    Global cache between all builds
+    - "vendor/"
+    - "bin/"
+
+variables:
+  COMPOSER_CACHE_DIR: "/cache/composer"
+
+# PHP 5.6
+
+phpspec_php_5_6:
+  image: "registry.some.pl/ci/php:5.6-ci"
+  stage: "transfer-changes-phase"
+  script:
+    - "phing composer-dev"
+    - "phing phpspec"
+  except:
+    - "master"
+
+lint_php_5_6:
+  image: "registry.some.pl/ci/php:5.6-ci"
+  stage: "transfer-changes-phase"
+  script:
+    - "phing composer-dev"
+    - "phing lint"
+  except:
+    - "master"
+
+join_coverage_raport:
+  image: "registry.some.pl/ci/php:5.6-ci"
+  stage: "functional-tests-phase"
+  script:
+    - "phing composer-dev"
+    - "phing coverage-raport"
+  only:
+    - "tags"
+  except:
+    - "master"
+
+pdepend:
+  image: "registry.some.pl/ci/php:5.6-ci"
+  stage: "dev-publish-phase"
+  script:
+    - "phing composer-dev"
+    - "phing phpdepend"
+  only:
+    - "tags"
+  except:
+    - "master"
+
+percentage_coverage:
+  image: "registry.some.pl/ci/php:5.6-ci"
+  stage: "dev-publish-phase"
+  script:
+    - "phing composer-dev"
+    - "phing coverage-check"
+  only:
+    - "tags"
+  except:
+    - "master"
+
+# Kiedy nie master artefakt powinnien zostac usuniety
+clean_up:
+  image: "registry.some.pl/ci/php:5.6-ci"
+  stage: "artifact-clean"
+  script:
+    - "phing composer-dev"
+    - "phing artifact-clean"
+  only:
+    - "tags"
+
+# PHP 7
+
+#phpspec_php_7_0:
+#  image: "registry.some.pl/php:7.0-ci"
+#  stage: "transfer-changes-phase"
+#  script:
+#    - "phing composer-dev"
+#    - "phing -D compabilityMode=1 phpspec"
+#  except:
+#    - "master"
