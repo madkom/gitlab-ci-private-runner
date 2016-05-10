@@ -15,9 +15,3 @@ app/data/*
 !tests/coverage/.gitkeep
 /tests/pdepend/*
 !tests/pdepend/.gitkeep
-/docker/rebuild/build
-!/docker/rebuild/build/.gitkeep
-/docker/rebuild/partials
-!/docker/rebuild/partials/.gitkeep
-/docker/rebuild/resources
-!/docker/rebuild/resources/.gitkeep
