@@ -20,7 +20,7 @@ class RunJobCommand extends Command
     {
         $this
             ->setName('private-gitlab-ci:job:run')
-            ->setDescription('Run gitlab-ci job in docker')
+            ->setDescription('Run gitlab-ci job in docker.')
             ->addArgument(
                 'config_ci',
                 InputArgument::REQUIRED,

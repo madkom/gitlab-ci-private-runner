@@ -94,7 +94,7 @@ class JobRunner
         }
         $dockerRunCommandBuilder = $dockerRunCommandBuilder->environment('CI_PROJECT_ID', $projectId);
         $dockerRunCommandBuilder = $dockerRunCommandBuilder->environment('CI_PROJECT_DIR', self::CONTAINER_PROJECT_COPY);
-        $dockerRunCommandBuilder = $dockerRunCommandBuilder->environment('CI_BUILD_REF', $refName);
+        $dockerRunCommandBuilder = $dockerRunCommandBuilder->environment('CI_BUILD_REF_NAME', $refName);
 
         $dockerRunCommandBuilder = $dockerRunCommandBuilder->volume(self::CONTAINER_PROJECT, $rootDirectory, 'ro');
 

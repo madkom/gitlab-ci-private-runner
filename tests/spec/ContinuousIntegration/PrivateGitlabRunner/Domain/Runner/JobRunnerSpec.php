@@ -84,7 +84,7 @@ class JobRunnerSpec extends ObjectBehavior
         $runCommandWithEnvFirst->environment('CI_DIRECTORY', '/home')->willReturn($runCommandWithEnvSecond);
         $runCommandWithEnvSecond->environment('CI_PROJECT_ID', $ciProjectId)->willReturn($runCommandWithEnvThird);
         $runCommandWithEnvThird->environment('CI_PROJECT_DIR', JobRunner::CONTAINER_PROJECT_COPY)->willReturn($runCommandWithEnvFourth);
-        $runCommandWithEnvFourth->environment('CI_BUILD_REF', $refName)->willReturn($runCommandWithEnvFifth);
+        $runCommandWithEnvFourth->environment('CI_BUILD_REF_NAME', $refName)->willReturn($runCommandWithEnvFifth);
 
         $runCommandWithEnvFifth->volume(JobRunner::CONTAINER_PROJECT, $projectDir, 'ro')->willReturn($runCommandWithVolume);
 

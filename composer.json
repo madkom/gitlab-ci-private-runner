@@ -1,9 +1,18 @@
 {
-    "name": "sidasproject/symfony2",
-    "description": "{Opis projektu}",
-    "license": "proprietary",
+    "name": "madkom/gitlab-ci-private-runner",
+    "description": "Gitlab Private Runner. Console application to run gitlab jobs in docker on developer machine.",
+    "license": "MIT",
+    "type": "project",
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "homepage": "http://madkom.pl/",
+    "keywords": ["gitlab", "ci", "continuous", "integration", "private", "runner", "client", "madkom", "gitlab ci"],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:madkom/clover-dump.git"
+        }
+    ],
     "require": {
         "php": ">=5.6.0",
         "symfony/console": "^3.0.5",
@@ -15,7 +24,9 @@
         "phpunit/phpunit": "*@stable",
         "phpunit/phpcov": "^3.0.0",
         "phpspec/phpspec": "2.*@stable",
-        "mikey179/vfsStream": "^1.6.3"
+        "mikey179/vfsStream": "^1.6.3",
+        "satooshi/php-coveralls": "dev-master",
+        "henrikbjorn/phpspec-code-coverage": "^2.0.2"
     },
     "scripts": {},
     "config": {
