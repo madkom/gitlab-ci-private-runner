@@ -1,4 +1,6 @@
 # Gitlab Private Runner
+[![Build Status](https://travis-ci.org/madkom/gitlab-ci-private-runner.svg?branch=master)](https://travis-ci.org/madkom/gitlab-ci-private-runner)
+[![Coverage Status](https://coveralls.io/repos/github/madkom/gitlab-ci-private-runner/badge.svg?branch=master)](https://coveralls.io/github/madkom/gitlab-ci-private-runner?branch=master)
 
 `Runs` Gitlab CI jobs on developer machine, `without need to push the code` to the repository.
 This project doesn't aim to replace Gitlab CI instead it helps developers to test even the most complicated jobs, without need
