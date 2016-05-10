@@ -36,6 +36,18 @@ class RunJobCommand extends Command
                 InputArgument::OPTIONAL,
                 'Current git ref name e.g. master, develop, 1.0.1',
                 'develop'
+            )
+            ->addArgument(
+                'sleep_time',
+                InputArgument::OPTIONAL,
+                'For how many second container sleep after performing actions',
+                null
+            )
+            ->addArgument(
+                'mapped_volumes',
+                InputArgument::IS_ARRAY,
+                'Map extra volumes to the container in format /data:/data /artifact_repository:/artifact',
+                []
             );
         ;
     }
@@ -46,9 +58,11 @@ class RunJobCommand extends Command
         $gitlabCiYmlPath = $input->getArgument('config_ci');
         $jobName         = $input->getArgument('job_name');
         $refName         = $input->getArgument('ref_name');
+        $sleepTime       = $input->getArgument('sleep_time');
+        $mappedVolumes   = $input->getArgument('mapped_volumes');
 
         /** @var JobRunner $jobRunner */
         $jobRunner = $diContainer->get(DIContainer::JOB_RUNNER);
-        $jobRunner->run($jobName, $gitlabCiYmlPath, $refName);
+        $jobRunner->run($jobName, $gitlabCiYmlPath, $refName, $sleepTime, $mappedVolumes);
     }
 }

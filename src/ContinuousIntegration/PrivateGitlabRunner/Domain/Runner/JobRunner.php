@@ -48,15 +48,17 @@ class JobRunner
     /**
      * Runs gitlab ci job
      *
-     * @param string $jobName
-     * @param string $gitlabCiPath
-     * @param string $refName
+     * @param string        $jobName
+     * @param string        $gitlabCiPath
+     * @param string        $refName
+     * @param null|string   $sleep
+     * @param array         $volumes
      *
      * @throws PrivateRunnerException
      */
-    public function run($jobName, $gitlabCiPath, $refName)
+    public function run($jobName, $gitlabCiPath, $refName, $sleep = null, array $volumes = [])
     {
-        $dockerRunCommand = $this->buildDockerRunCommand($jobName, $gitlabCiPath, $refName);
+        $dockerRunCommand = $this->buildDockerRunCommand($jobName, $gitlabCiPath, $refName, $sleep, $volumes);
 
         $this->processRunner->runProcess($dockerRunCommand);
     }
@@ -65,11 +67,13 @@ class JobRunner
      * @param string $jobName
      * @param string $gitlabCiPath
      * @param string $refName
+     * @param null|string $sleep
+     * @param array  $volumes
      *
      * @return string
      * @throws PrivateRunnerException
      */
-    private function buildDockerRunCommand($jobName, $gitlabCiPath, $refName)
+    private function buildDockerRunCommand($jobName, $gitlabCiPath, $refName, $sleep = null, array $volumes = [])
     {
         $rootDirectory = dirname($gitlabCiPath);
         $projectId     = md5($gitlabCiPath);
@@ -97,6 +101,13 @@ class JobRunner
         $dockerRunCommandBuilder = $dockerRunCommandBuilder->environment('CI_BUILD_REF_NAME', $refName);
 
         $dockerRunCommandBuilder = $dockerRunCommandBuilder->volume(self::CONTAINER_PROJECT, $rootDirectory, 'ro');
+        foreach ($volumes as $volume) {
+            $separatedVolume = explode(':', $volume);
+            $hostVolume      = $separatedVolume[0];
+            $containerVolume = $separatedVolume[1];
+            $dockerRunCommandBuilder = $dockerRunCommandBuilder->volume($hostVolume, $containerVolume);
+        }
+
 
         $containerProject = self::CONTAINER_PROJECT;
         $containerProjectCopy = self::CONTAINER_PROJECT_COPY;
@@ -104,6 +115,7 @@ class JobRunner
         foreach ($job->scripts() as $script) {
             $command .= " && {$script}";
         }
+        $command .= $sleep ? " && sleep {$sleep}" : '';
         $command .= "\"";
 
         $dockerRunCommandBuilder = $dockerRunCommandBuilder->cmd($command);
