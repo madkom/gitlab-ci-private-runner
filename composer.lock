@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3af761ca7f2d92f9af66d310cc5df970",
-    "content-hash": "b287f7c5c15d09b2a8ef1ba8b2e855e0",
+    "hash": "9a28c591815553c1c15fc6eb2afd96c2",
+    "content-hash": "786f9bf43fb0f7cf2ccbcdde68fd8549",
     "packages": [
         {
             "name": "symfony/console",
@@ -17,7 +17,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/symfony-console-34a214710e0714b6efcf40ba3cd1e31373a97820-zip-bca1bc.zip",
+                "url": "https://api.github.com/repos/symfony/console/zipball/34a214710e0714b6efcf40ba3cd1e31373a97820",
                 "reference": "34a214710e0714b6efcf40ba3cd1e31373a97820",
                 "shasum": "d59b3545f69de572ce8d6c4d66e082b40b5c9a2c"
             },
@@ -77,7 +77,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/symfony-dependency-injection-b2f4d40a6ed0f6ace59aa3c88d08a94eb9aef811-zip-0e886e.zip",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/b2f4d40a6ed0f6ace59aa3c88d08a94eb9aef811",
                 "reference": "b2f4d40a6ed0f6ace59aa3c88d08a94eb9aef811",
                 "shasum": "7a67313519c3e4a6ca7f763ee537a96551c14dda"
             },
@@ -196,7 +196,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/symfony-process-53f9407c0bb1c5a79127db8f7bfe12f0f6f3dcdb-zip-57aa0e.zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/53f9407c0bb1c5a79127db8f7bfe12f0f6f3dcdb",
                 "reference": "53f9407c0bb1c5a79127db8f7bfe12f0f6f3dcdb",
                 "shasum": "b18b0f2d8e020af7307e357c3cd8f3ff5b31b6c3"
             },
@@ -245,7 +245,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/symfony-yaml-0047c8366744a16de7516622c5b7355336afae96-zip-cde159.zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/0047c8366744a16de7516622c5b7355336afae96",
                 "reference": "0047c8366744a16de7516622c5b7355336afae96",
                 "shasum": "defe6dc4bf2a4ac58f97aa63be4f4c323af50157"
             },
@@ -286,281 +286,6 @@
         }
     ],
     "packages-dev": [
-        {
-            "name": "behat/behat",
-            "version": "v3.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Behat/Behat.git",
-                "reference": "359d987b3064d78f2d3a6ba3a355277f3b09b47f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/behat-behat-359d987b3064d78f2d3a6ba3a355277f3b09b47f-zip-55b82d.zip",
-                "reference": "359d987b3064d78f2d3a6ba3a355277f3b09b47f",
-                "shasum": "915e953dd5cae8a52b02c8507ec1a5aea31ff74c"
-            },
-            "require": {
-                "behat/gherkin": "~4.4",
-                "behat/transliterator": "~1.0",
-                "ext-mbstring": "*",
-                "php": ">=5.3.3",
-                "symfony/class-loader": "~2.1|~3.0",
-                "symfony/config": "~2.3|~3.0",
-                "symfony/console": "~2.1|~3.0",
-                "symfony/dependency-injection": "~2.1|~3.0",
-                "symfony/event-dispatcher": "~2.1|~3.0",
-                "symfony/translation": "~2.3|~3.0",
-                "symfony/yaml": "~2.1|~3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.5",
-                "symfony/process": "~2.1|~3.0"
-            },
-            "suggest": {
-                "behat/mink-extension": "for integration with Mink testing framework",
-                "behat/symfony2-extension": "for integration with Symfony2 web framework",
-                "behat/yii-extension": "for integration with Yii web framework"
-            },
-            "bin": [
-                "bin/behat"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Behat\\Behat": "src/",
-                    "Behat\\Testwork": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Konstantin Kudryashov",
-                    "email": "ever.zet@gmail.com",
-                    "homepage": "http://everzet.com"
-                }
-            ],
-            "description": "Scenario-oriented BDD framework for PHP 5.3",
-            "homepage": "http://behat.org/",
-            "keywords": [
-                "Agile",
-                "BDD",
-                "ScenarioBDD",
-                "Scrum",
-                "StoryBDD",
-                "User story",
-                "business",
-                "development",
-                "documentation",
-                "examples",
-                "symfony",
-                "testing"
-            ],
-            "time": "2016-03-28 07:04:45"
-        },
-        {
-            "name": "behat/gherkin",
-            "version": "v4.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Behat/Gherkin.git",
-                "reference": "1576b485c0f92ef6d27da9c4bbfc57ee30cf6911"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/behat-gherkin-1576b485c0f92ef6d27da9c4bbfc57ee30cf6911-zip-2f8719.zip",
-                "reference": "1576b485c0f92ef6d27da9c4bbfc57ee30cf6911",
-                "shasum": "ddb80bc411f0520cb0b31791f5e5241a59791b4a"
-            },
-            "require": {
-                "php": ">=5.3.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "symfony/yaml": "~2.1"
-            },
-            "suggest": {
-                "symfony/yaml": "If you want to parse features, represented in YAML files"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Behat\\Gherkin": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Konstantin Kudryashov",
-                    "email": "ever.zet@gmail.com",
-                    "homepage": "http://everzet.com"
-                }
-            ],
-            "description": "Gherkin DSL parser for PHP 5.3",
-            "homepage": "http://behat.org/",
-            "keywords": [
-                "BDD",
-                "Behat",
-                "Cucumber",
-                "DSL",
-                "gherkin",
-                "parser"
-            ],
-            "time": "2015-12-30 14:47:00"
-        },
-        {
-            "name": "behat/transliterator",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Behat/Transliterator.git",
-                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/behat-transliterator-868e05be3a9f25ba6424c2dd4849567f50715003-zip-9996f7.zip",
-                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003",
-                "shasum": "60fd30c7852e473c1ed5a561911ec010578780a2"
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Behat\\Transliterator": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "Artistic-1.0"
-            ],
-            "description": "String transliterator",
-            "keywords": [
-                "i18n",
-                "slug",
-                "transliterator"
-            ],
-            "time": "2015-09-28 16:26:35"
-        },
-        {
-            "name": "clover/dump",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mrkrstphr/clover-dump.git",
-                "reference": "3257984f621702948dc2c3664b332b391f1525c7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/madkom/clover-dump/zipball/7088dcccb915c3afba101a3f6dd21eaeff8f82c0",
-                "reference": "7088dcccb915c3afba101a3f6dd21eaeff8f82c0",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "symfony/console": "*"
-            },
-            "bin": [
-                "bin/clover-dump"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Clover\\Dump": [
-                        "src/"
-                    ]
-                }
-            },
-            "homepage": "https://github.com/mrkrstphr/clover-dump",
-            "support": {
-                "source": "https://github.com/madkom/clover-dump/tree/master"
-            },
-            "time": "2015-08-09 23:14:52"
-        },
-        {
-            "name": "composer/semver",
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/semver.git",
-                "reference": "84c47f3d8901440403217afc120683c7385aecb8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/composer-semver-84c47f3d8901440403217afc120683c7385aecb8-zip-ca1cc2.zip",
-                "reference": "84c47f3d8901440403217afc120683c7385aecb8",
-                "shasum": "a4b4168b5e036d65f9f81b390396c8342a20df2a"
-            },
-            "require": {
-                "php": "^5.3.2 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.5 || ^5.0.5",
-                "phpunit/phpunit-mock-objects": "2.3.0 || ^3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Semver\\": "src"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nils Adermann",
-                    "email": "naderman@naderman.de",
-                    "homepage": "http://www.naderman.de"
-                },
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                },
-                {
-                    "name": "Rob Bast",
-                    "email": "rob.bast@gmail.com",
-                    "homepage": "http://robbast.nl"
-                }
-            ],
-            "description": "Semver library that offers utilities, version constraint parsing and validation.",
-            "keywords": [
-                "semantic",
-                "semver",
-                "validation",
-                "versioning"
-            ],
-            "time": "2016-03-30 13:16:03"
-        },
         {
             "name": "doctrine/instantiator",
             "version": "1.0.5",
@@ -625,7 +350,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/guzzlehttp-guzzle-d094e337976dff9d8e2424e8485872194e768662-zip-a8745d.zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/d094e337976dff9d8e2424e8485872194e768662",
                 "reference": "d094e337976dff9d8e2424e8485872194e768662",
                 "shasum": "0f3ed25aa3976ca8ec7b46e86a432c43f5af8c44"
             },
@@ -687,7 +412,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/guzzlehttp-promises-bb9024c526b22f3fe6ae55a561fd70653d470aa8-zip-034c49.zip",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/bb9024c526b22f3fe6ae55a561fd70653d470aa8",
                 "reference": "bb9024c526b22f3fe6ae55a561fd70653d470aa8",
                 "shasum": "75c86eac8d24e0e8f6277c766b2fd3b4c5d64219"
             },
@@ -738,7 +463,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/guzzlehttp-psr7-31382fef2889136415751badebbd1cb022a4ed72-zip-9a0d20.zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/31382fef2889136415751badebbd1cb022a4ed72",
                 "reference": "31382fef2889136415751badebbd1cb022a4ed72",
                 "shasum": "190c02ee18cb1074617328f49647e64dff46b499"
             },
@@ -796,7 +521,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/henrikbjorn-phpspec-code-coverage-528a0c69a524f8acba5f66bc59ae8dc9bc409045-zip-c9914e.zip",
+                "url": "https://api.github.com/repos/henrikbjorn/PhpSpecCodeCoverageExtension/zipball/528a0c69a524f8acba5f66bc59ae8dc9bc409045",
                 "reference": "528a0c69a524f8acba5f66bc59ae8dc9bc409045",
                 "shasum": "8f758cd4e6d176c3c2cf23cedf15e06c1957347b"
             },
@@ -828,507 +553,6 @@
             ],
             "description": "Integrates CodeCoverage with PhpSpec",
             "time": "2016-05-05 18:25:12"
-        },
-        {
-            "name": "instaclick/object-calisthenics-sniffs",
-            "version": "dev-master",
-            "target-dir": "ObjectCalisthenics",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/instaclick/ObjectCalisthenicsSniffs.git",
-                "reference": "fff9c3773e2ba0f2bd13a8ea97f742bc5d9576d3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/instaclick-object-calisthenics-sniffs-fff9c3773e2ba0f2bd13a8ea97f742bc5d9576d3-zip-8efba8.zip",
-                "reference": "fff9c3773e2ba0f2bd13a8ea97f742bc5d9576d3",
-                "shasum": "2e418fef5e3fe9b364f79ceec3ff89ca143d1d45"
-            },
-            "require": {
-                "nikic/php-parser": "~1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "ObjectCalisthenics/Sniffs/"
-                ]
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Instaclick Inc.",
-                    "homepage": "http://instaclick.com/"
-                }
-            ],
-            "description": "Object Calisthenics sniffs for PHP_CodeSniffer",
-            "time": "2014-12-17 12:25:22"
-        },
-        {
-            "name": "jakub-onderka/php-console-color",
-            "version": "0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/JakubOnderka/PHP-Console-Color.git",
-                "reference": "e0b393dacf7703fc36a4efc3df1435485197e6c1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/jakub-onderka-php-console-color-e0b393dacf7703fc36a4efc3df1435485197e6c1-zip-c96f1c.zip",
-                "reference": "e0b393dacf7703fc36a4efc3df1435485197e6c1",
-                "shasum": "429f6e533ea40b40eec98712ddf779afa50de0f5"
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "jakub-onderka/php-code-style": "1.0",
-                "jakub-onderka/php-parallel-lint": "0.*",
-                "jakub-onderka/php-var-dump-check": "0.*",
-                "phpunit/phpunit": "3.7.*",
-                "squizlabs/php_codesniffer": "1.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "JakubOnderka\\PhpConsoleColor": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Jakub Onderka",
-                    "email": "jakub.onderka@gmail.com",
-                    "homepage": "http://www.acci.cz"
-                }
-            ],
-            "time": "2014-04-08 15:00:19"
-        },
-        {
-            "name": "jakub-onderka/php-console-highlighter",
-            "version": "v0.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/JakubOnderka/PHP-Console-Highlighter.git",
-                "reference": "7daa75df45242c8d5b75a22c00a201e7954e4fb5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/jakub-onderka-php-console-highlighter-7daa75df45242c8d5b75a22c00a201e7954e4fb5-zip-a01700.zip",
-                "reference": "7daa75df45242c8d5b75a22c00a201e7954e4fb5",
-                "shasum": "05010d42111ddad8c5098dd1c5aa82c38f402650"
-            },
-            "require": {
-                "jakub-onderka/php-console-color": "~0.1",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "jakub-onderka/php-code-style": "~1.0",
-                "jakub-onderka/php-parallel-lint": "~0.5",
-                "jakub-onderka/php-var-dump-check": "~0.1",
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~1.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "JakubOnderka\\PhpConsoleHighlighter": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jakub Onderka",
-                    "email": "acci@acci.cz",
-                    "homepage": "http://www.acci.cz/"
-                }
-            ],
-            "time": "2015-04-20 18:58:01"
-        },
-        {
-            "name": "jakub-onderka/php-parallel-lint",
-            "version": "v0.9.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/JakubOnderka/PHP-Parallel-Lint.git",
-                "reference": "2ead2e4043ab125bee9554f356e0a86742c2d4fa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/jakub-onderka-php-parallel-lint-2ead2e4043ab125bee9554f356e0a86742c2d4fa-zip-4ec9fc.zip",
-                "reference": "2ead2e4043ab125bee9554f356e0a86742c2d4fa",
-                "shasum": "95d1dea2c4f57bb850dcca2474ab0356595acbab"
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "jakub-onderka/php-console-highlighter": "~0.3",
-                "nette/tester": "~1.3"
-            },
-            "suggest": {
-                "jakub-onderka/php-console-highlighter": "Highlight syntax in code snippet"
-            },
-            "bin": [
-                "parallel-lint"
-            ],
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "./"
-                ]
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Jakub Onderka",
-                    "email": "jakub.onderka@gmail.com"
-                }
-            ],
-            "description": "This tool check syntax of PHP files about 20x faster than serial check.",
-            "homepage": "https://github.com/JakubOnderka/PHP-Parallel-Lint",
-            "time": "2015-12-15 10:42:16"
-        },
-        {
-            "name": "knplabs/phpspec-welldone-extension",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/KnpLabs/PhpSpecWellDoneExtension.git",
-                "reference": "b3f8d7aead295a1482d0c75b042cd76e49e92f47"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/knplabs-phpspec-welldone-extension-b3f8d7aead295a1482d0c75b042cd76e49e92f47-zip-044212.zip",
-                "reference": "b3f8d7aead295a1482d0c75b042cd76e49e92f47",
-                "shasum": "8de43aea556c66d225caf64c92a6a4e9ab106e2e"
-            },
-            "require": {
-                "phpspec/phpspec": "~2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Knp\\PhpSpec\\WellDone": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "KnpLabs",
-                    "homepage": "http://knplabs.com"
-                },
-                {
-                    "name": "Pedrotroller",
-                    "homepage": "https://github.com/PedroTroller"
-                }
-            ],
-            "description": "Extension for PHPSPEC. Find out which classes are not specified. ",
-            "time": "2015-10-02 10:59:29"
-        },
-        {
-            "name": "madkom/continuous-integration",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "ssh://git@gitlab.madkom.pl:11371/sidas-deploy/ci.git",
-                "reference": "0b5eb2ededace5673b4d1cf7a72be940e1e51c72"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/madkom-continuous-integration-dev-master-d88f33.zip",
-                "reference": "0b5eb2ededace5673b4d1cf7a72be940e1e51c72",
-                "shasum": "24ad9f449d9c6f637c3f3b20d0258c370c70e927"
-            },
-            "require": {
-                "behat/behat": "3.*",
-                "clover/dump": "dev-master",
-                "composer/semver": "^1.3.0",
-                "henrikbjorn/phpspec-code-coverage": "^2.0.2",
-                "instaclick/object-calisthenics-sniffs": "@dev",
-                "jakub-onderka/php-console-highlighter": "0.*@stable",
-                "jakub-onderka/php-parallel-lint": "0.*@stable",
-                "knplabs/phpspec-welldone-extension": "dev-master",
-                "madkom/docker-image-builder": "^0.9.9",
-                "madkom/docker-registry-api": "^0.7.4",
-                "madkom/pact-broker-client": "^0.9.4",
-                "madkom/pact-php-client": "^0.8.0",
-                "omines/semver": "^0.1.0",
-                "pdepend/pdepend": "^2.2.2",
-                "phing/phing": "^2.14.0",
-                "php-http/guzzle6-adapter": "^1.0.0",
-                "php-http/httplug": "^1.0.0",
-                "phpspec/phpspec": "2.*@stable",
-                "phpunit/phpcov": "^3.0.0",
-                "phpunit/phpunit": "*@stable",
-                "psr/http-message": "^1.0",
-                "satooshi/php-coveralls": "dev-master",
-                "squizlabs/php_codesniffer": "*",
-                "symfony/process": "^3.0"
-            },
-            "type": "library",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Darek Gafka",
-                    "email": "d.gafka@madkom.pl"
-                }
-            ],
-            "description": "Library for creating docker images from templates.",
-            "homepage": "http://madkom.pl/",
-            "keywords": [
-                "ci",
-                "continues",
-                "docker",
-                "integration"
-            ],
-            "time": "2016-05-04 09:49:10"
-        },
-        {
-            "name": "madkom/docker-image-builder",
-            "version": "0.9.11",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/madkom/docker-image-builder.git",
-                "reference": "c85c42900fdf2f891cd90a07be52a5dff102167b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/madkom-docker-image-builder-c85c42900fdf2f891cd90a07be52a5dff102167b-zip-744a8c.zip",
-                "reference": "c85c42900fdf2f891cd90a07be52a5dff102167b",
-                "shasum": "b3edc8cd1c826be761f3d9cfa3e401c20c25ea4b"
-            },
-            "require": {
-                "symfony/expression-language": "^3.0.2"
-            },
-            "require-dev": {
-                "henrikbjorn/phpspec-code-coverage": "dev-master",
-                "mikey179/vfsstream": "^1.6.2",
-                "phpspec/phpspec": "^2.4.1",
-                "phpunit/php-code-coverage": "^3.0",
-                "phpunit/phpcov": "^3.0.0",
-                "phpunit/phpunit": "^5.2.4",
-                "satooshi/php-coveralls": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Madkom\\Docker\\": "src"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Darek Gafka",
-                    "email": "d.gafka@madkom.pl"
-                }
-            ],
-            "description": "Library for creating docker images from templates.",
-            "homepage": "http://madkom.pl/",
-            "keywords": [
-                "automate",
-                "build",
-                "builder",
-                "ci",
-                "continues integration",
-                "creator",
-                "docker",
-                "image",
-                "template"
-            ],
-            "time": "2016-04-12 08:18:27"
-        },
-        {
-            "name": "madkom/docker-registry-api",
-            "version": "0.7.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/madkom/docker-registry-client.git",
-                "reference": "e0ffe95786b4ed099acc991b456f57dc5e8dd9fb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/madkom-docker-registry-api-e0ffe95786b4ed099acc991b456f57dc5e8dd9fb-zip-40cb66.zip",
-                "reference": "e0ffe95786b4ed099acc991b456f57dc5e8dd9fb",
-                "shasum": "aea60dcf1b08b10c47ba4bc87e1cf58883661ef6"
-            },
-            "require": {
-                "guzzlehttp/psr7": "^1.2.2",
-                "php-http/httplug": "^1.0.0",
-                "psr/http-message": "^1.0"
-            },
-            "require-dev": {
-                "henrikbjorn/phpspec-code-coverage": "dev-master",
-                "php-http/guzzle6-adapter": "^1.0.0",
-                "phpspec/phpspec": "^2.4.1",
-                "phpunit/php-code-coverage": "^3.0",
-                "phpunit/phpcov": "^3.0.0",
-                "phpunit/phpunit": "^5.2.4",
-                "satooshi/php-coveralls": "dev-master",
-                "symfony/var-dumper": "^3.0.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Madkom\\": "src"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Darek Gafka",
-                    "email": "d.gafka@madkom.pl"
-                }
-            ],
-            "description": "Client for docker registry.",
-            "homepage": "http://madkom.pl/",
-            "keywords": [
-                "api",
-                "client",
-                "docker",
-                "madkom",
-                "private",
-                "registry"
-            ],
-            "time": "2016-04-01 11:08:32"
-        },
-        {
-            "name": "madkom/pact-broker-client",
-            "version": "0.9.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/madkom/pact-broker-client.git",
-                "reference": "ccd480670c82311c1d0af692a849ff9cd73e5346"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/madkom-pact-broker-client-ccd480670c82311c1d0af692a849ff9cd73e5346-zip-ac6d9d.zip",
-                "reference": "ccd480670c82311c1d0af692a849ff9cd73e5346",
-                "shasum": "844aaa7aee89bed7e057a919e907122ea7d29f82"
-            },
-            "require": {
-                "guzzlehttp/psr7": "^1.2.2",
-                "php-http/httplug": "^1.0.0",
-                "psr/http-message": "^1.0"
-            },
-            "require-dev": {
-                "henrikbjorn/phpspec-code-coverage": "dev-master",
-                "php-http/guzzle6-adapter": "^1.0.0",
-                "phpspec/phpspec": "^2.4.1",
-                "phpunit/php-code-coverage": "^3.0",
-                "phpunit/phpcov": "^3.0.0",
-                "phpunit/phpunit": "^5.2.4",
-                "satooshi/php-coveralls": "dev-master",
-                "symfony/var-dumper": "^3.0.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Madkom\\": "src"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Darek Gafka",
-                    "email": "d.gafka@madkom.pl"
-                }
-            ],
-            "description": "Client for pact broker.",
-            "homepage": "http://madkom.pl/",
-            "keywords": [
-                "broker",
-                "client",
-                "consumer",
-                "contract",
-                "driven",
-                "madkom",
-                "pact"
-            ],
-            "time": "2016-04-12 08:21:41"
-        },
-        {
-            "name": "madkom/pact-php-client",
-            "version": "0.8.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/madkom/Pact-PHP-Client.git",
-                "reference": "6e67616447b546d7ac5bc4cd2c844c19e603cc41"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/madkom-pact-php-client-6e67616447b546d7ac5bc4cd2c844c19e603cc41-zip-28cee6.zip",
-                "reference": "6e67616447b546d7ac5bc4cd2c844c19e603cc41",
-                "shasum": "d87a6815a38b6201ef5c3eda952465e20db64ef0"
-            },
-            "require": {
-                "guzzlehttp/psr7": "^1.2.2",
-                "php-http/httplug": "^1.0.0",
-                "psr/http-message": "^1.0"
-            },
-            "require-dev": {
-                "henrikbjorn/phpspec-code-coverage": "dev-master",
-                "php-http/guzzle6-adapter": "^1.0.0",
-                "phpspec/phpspec": "^2.4.1",
-                "phpunit/php-code-coverage": "^3.0",
-                "phpunit/phpcov": "^3.0.0",
-                "phpunit/phpunit": "^5.2.4",
-                "satooshi/php-coveralls": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Madkom\\": "src"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Darek Gafka",
-                    "email": "d.gafka@madkom.pl"
-                }
-            ],
-            "description": "Client written in PHP for Pact-Mock-Service",
-            "homepage": "http://madkom.pl/",
-            "keywords": [
-                "client",
-                "consumer",
-                "contract",
-                "driven",
-                "madkom",
-                "mock",
-                "pact",
-                "service"
-            ],
-            "time": "2016-04-12 08:20:21"
         },
         {
             "name": "mikey179/vfsStream",
@@ -1417,400 +641,6 @@
                 "object graph"
             ],
             "time": "2015-11-20 12:04:31"
-        },
-        {
-            "name": "nikic/php-parser",
-            "version": "v1.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/nikic-php-parser-f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51-zip-632551.zip",
-                "reference": "f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51",
-                "shasum": "dc9cc072a29c9efdf50bdc1e8dd7d2efc00f9c6d"
-            },
-            "require": {
-                "ext-tokenizer": "*",
-                "php": ">=5.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "lib/bootstrap.php"
-                ]
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Nikita Popov"
-                }
-            ],
-            "description": "A PHP parser written in PHP",
-            "keywords": [
-                "parser",
-                "php"
-            ],
-            "time": "2015-09-19 14:15:08"
-        },
-        {
-            "name": "omines/semver",
-            "version": "0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/omines/semver.git",
-                "reference": "288800ad26ada8a5be40a0782a3c6156f11d4994"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/omines-semver-288800ad26ada8a5be40a0782a3c6156f11d4994-zip-756e98.zip",
-                "reference": "288800ad26ada8a5be40a0782a3c6156f11d4994",
-                "shasum": "f99a2745a372469dfa63776216c6c47830c1984f"
-            },
-            "require": {
-                "php": "^5.5 || ^7.0"
-            },
-            "require-dev": {
-                "fabpot/php-cs-fixer": "^1.12@dev",
-                "phpunit/phpunit": "^4.8",
-                "satooshi/php-coveralls": "^1.0.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Omines\\Semver\\": "src/Semver/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Niels Keurentjes",
-                    "email": "niels.keurentjes@omines.com",
-                    "homepage": "https://www.omines.nl/"
-                }
-            ],
-            "description": "SemVer 2.0.0 compliant semantic versioning tools, ranges, filters, sorters and collections",
-            "keywords": [
-                "collection",
-                "constraints",
-                "dictionary",
-                "filters",
-                "iterator",
-                "semantic",
-                "semver",
-                "versioning"
-            ],
-            "time": "2016-03-14 23:58:07"
-        },
-        {
-            "name": "pdepend/pdepend",
-            "version": "2.2.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pdepend/pdepend.git",
-                "reference": "b086687f3a01dc6bb92d633aef071d2c5dd0db06"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/pdepend-pdepend-b086687f3a01dc6bb92d633aef071d2c5dd0db06-zip-69f44f.zip",
-                "reference": "b086687f3a01dc6bb92d633aef071d2c5dd0db06",
-                "shasum": "a3aa6aadd87f28bd7343660082b77cf003a992d0"
-            },
-            "require": {
-                "php": ">=5.3.7",
-                "symfony/config": "^2.3.0|^3",
-                "symfony/dependency-injection": "^2.3.0|^3",
-                "symfony/filesystem": "^2.3.0|^3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.4.0,<4.8",
-                "squizlabs/php_codesniffer": "^2.0.0"
-            },
-            "bin": [
-                "src/bin/pdepend"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PDepend\\": "src/main/php/PDepend"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Official version of pdepend to be handled with Composer",
-            "time": "2016-03-10 15:15:04"
-        },
-        {
-            "name": "phing/phing",
-            "version": "2.14.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phingofficial/phing.git",
-                "reference": "7dd73c83c377623def54b58121f46b4dcb35dd61"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/phing-phing-7dd73c83c377623def54b58121f46b4dcb35dd61-zip-d2e812.zip",
-                "reference": "7dd73c83c377623def54b58121f46b4dcb35dd61",
-                "shasum": "f7461233d052120165b7b557cad596250413dfb5"
-            },
-            "require": {
-                "php": ">=5.2.0"
-            },
-            "require-dev": {
-                "ext-pdo_sqlite": "*",
-                "lastcraft/simpletest": "@dev",
-                "mikey179/vfsstream": "^1.6",
-                "pdepend/pdepend": "2.x",
-                "pear/archive_tar": "1.4.x",
-                "pear/http_request2": "dev-trunk",
-                "pear/net_growl": "dev-trunk",
-                "pear/pear-core-minimal": "1.10.1",
-                "pear/versioncontrol_git": "@dev",
-                "pear/versioncontrol_svn": "~0.5",
-                "phpdocumentor/phpdocumentor": "2.x",
-                "phploc/phploc": "~2.0.6",
-                "phpmd/phpmd": "~2.2",
-                "phpunit/phpunit": ">=3.7",
-                "sebastian/git": "~1.0",
-                "sebastian/phpcpd": "2.x",
-                "squizlabs/php_codesniffer": "~2.2",
-                "symfony/yaml": "~2.7"
-            },
-            "suggest": {
-                "pdepend/pdepend": "PHP version of JDepend",
-                "pear/archive_tar": "Tar file management class",
-                "pear/versioncontrol_git": "A library that provides OO interface to handle Git repository",
-                "pear/versioncontrol_svn": "A simple OO-style interface for Subversion, the free/open-source version control system",
-                "phpdocumentor/phpdocumentor": "Documentation Generator for PHP",
-                "phploc/phploc": "A tool for quickly measuring the size of a PHP project",
-                "phpmd/phpmd": "PHP version of PMD tool",
-                "phpunit/php-code-coverage": "Library that provides collection, processing, and rendering functionality for PHP code coverage information",
-                "phpunit/phpunit": "The PHP Unit Testing Framework",
-                "sebastian/phpcpd": "Copy/Paste Detector (CPD) for PHP code",
-                "tedivm/jshrink": "Javascript Minifier built in PHP"
-            },
-            "bin": [
-                "bin/phing"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.14.x-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "classes/phing/"
-                ]
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "include-path": [
-                "classes"
-            ],
-            "license": [
-                "LGPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Michiel Rook",
-                    "email": "mrook@php.net"
-                },
-                {
-                    "name": "Phing Community",
-                    "homepage": "https://www.phing.info/trac/wiki/Development/Contributors"
-                }
-            ],
-            "description": "PHing Is Not GNU make; it's a PHP project build system or build tool based on Apache Ant.",
-            "homepage": "https://www.phing.info/",
-            "keywords": [
-                "build",
-                "phing",
-                "task",
-                "tool"
-            ],
-            "time": "2016-03-10 21:39:23"
-        },
-        {
-            "name": "php-http/guzzle6-adapter",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-http/guzzle6-adapter.git",
-                "reference": "c7a1c6b47530d88b7cb10949779505e2dbd8e7b4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/php-http-guzzle6-adapter-c7a1c6b47530d88b7cb10949779505e2dbd8e7b4-zip-5897ce.zip",
-                "reference": "c7a1c6b47530d88b7cb10949779505e2dbd8e7b4",
-                "shasum": "9baca5a7585e38f444b10c651168fb8c646cb686"
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^6.0",
-                "php": ">=5.5.0",
-                "php-http/httplug": "^1.0"
-            },
-            "provide": {
-                "php-http/async-client-implementation": "1.0",
-                "php-http/client-implementation": "1.0"
-            },
-            "require-dev": {
-                "ext-curl": "*",
-                "php-http/adapter-integration-tests": "^0.4"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Http\\Adapter\\Guzzle6\\": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Márk Sági-Kazár",
-                    "email": "mark.sagikazar@gmail.com"
-                },
-                {
-                    "name": "David de Boer",
-                    "email": "david@ddeboer.nl"
-                }
-            ],
-            "description": "Guzzle 6 HTTP Adapter",
-            "homepage": "http://httplug.io",
-            "keywords": [
-                "Guzzle",
-                "http"
-            ],
-            "time": "2016-05-09 21:46:08"
-        },
-        {
-            "name": "php-http/httplug",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-http/httplug.git",
-                "reference": "2061047ca53a08a6b8f52e997b2a76f386b397dd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/php-http-httplug-2061047ca53a08a6b8f52e997b2a76f386b397dd-zip-22ec10.zip",
-                "reference": "2061047ca53a08a6b8f52e997b2a76f386b397dd",
-                "shasum": "a0618a1615b30689337d62997f86fb83ed5aeefa"
-            },
-            "require": {
-                "php": ">=5.4",
-                "php-http/promise": "^1.0",
-                "psr/http-message": "^1.0"
-            },
-            "require-dev": {
-                "henrikbjorn/phpspec-code-coverage": "^1.0",
-                "phpspec/phpspec": "^2.4"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Http\\Client\\": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Eric GELOEN",
-                    "email": "geloen.eric@gmail.com"
-                },
-                {
-                    "name": "Márk Sági-Kazár",
-                    "email": "mark.sagikazar@gmail.com"
-                }
-            ],
-            "description": "HTTPlug, the HTTP client abstraction for PHP",
-            "homepage": "http://httplug.io",
-            "keywords": [
-                "client",
-                "http"
-            ],
-            "time": "2016-01-26 14:34:50"
-        },
-        {
-            "name": "php-http/promise",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-http/promise.git",
-                "reference": "dc494cdc9d7160b9a09bd5573272195242ce7980"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/php-http-promise-dc494cdc9d7160b9a09bd5573272195242ce7980-zip-655f15.zip",
-                "reference": "dc494cdc9d7160b9a09bd5573272195242ce7980",
-                "shasum": "ae5176a63a1a8e735f8fd09283015dbd6243016f"
-            },
-            "require-dev": {
-                "henrikbjorn/phpspec-code-coverage": "^1.0",
-                "phpspec/phpspec": "^2.4"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Http\\Promise\\": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Márk Sági-Kazár",
-                    "email": "mark.sagikazar@gmail.com"
-                },
-                {
-                    "name": "Joel Wurtz",
-                    "email": "joel.wurtz@gmail.com"
-                }
-            ],
-            "description": "Promise used for asynchronous HTTP requests",
-            "homepage": "http://httplug.io",
-            "keywords": [
-                "promise"
-            ],
-            "time": "2016-01-26 13:27:02"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -2469,7 +1299,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/psr-http-message-85d63699f0dbedb190bbd4b0d2b9dc707ea4c298-zip-13c6c1.zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
                 "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
                 "shasum": "27b0d0bf26a916d1851a706667fce1d2de6b3d21"
             },
@@ -2518,7 +1348,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/psr-log-fe0936ee26643249e916849d48e3a51d5f5e278b-zip-e71523.zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
                 "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
                 "shasum": "d4dc8e2f88b0e32890abd4cb50f42b0307d51cf1"
             },
@@ -2556,7 +1386,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/satooshi-php-coveralls-50c60bb64054974f8ed7540ae6e75fd7981a5fd3-zip-d7b2af.zip",
+                "url": "https://api.github.com/repos/satooshi/php-coveralls/zipball/50c60bb64054974f8ed7540ae6e75fd7981a5fd3",
                 "reference": "50c60bb64054974f8ed7540ae6e75fd7981a5fd3",
                 "shasum": "94f4260f69b7613acf2c36154b8f2e13c34a0831"
             },
@@ -3153,140 +1983,6 @@
             "time": "2015-06-21 13:59:46"
         },
         {
-            "name": "squizlabs/php_codesniffer",
-            "version": "2.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "1bcdf03b068a530ac1962ce671dead356eeba43b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/squizlabs-php_codesniffer-1bcdf03b068a530ac1962ce671dead356eeba43b-zip-da03c1.zip",
-                "reference": "1bcdf03b068a530ac1962ce671dead356eeba43b",
-                "shasum": "7f66951ff02772eed1f4d897d5d29fae72136326"
-            },
-            "require": {
-                "ext-simplexml": "*",
-                "ext-tokenizer": "*",
-                "ext-xmlwriter": "*",
-                "php": ">=5.1.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "bin": [
-                "scripts/phpcs",
-                "scripts/phpcbf"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.x-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "CodeSniffer.php",
-                    "CodeSniffer/CLI.php",
-                    "CodeSniffer/Exception.php",
-                    "CodeSniffer/File.php",
-                    "CodeSniffer/Fixer.php",
-                    "CodeSniffer/Report.php",
-                    "CodeSniffer/Reporting.php",
-                    "CodeSniffer/Sniff.php",
-                    "CodeSniffer/Tokens.php",
-                    "CodeSniffer/Reports/",
-                    "CodeSniffer/Tokenizers/",
-                    "CodeSniffer/DocGenerators/",
-                    "CodeSniffer/Standards/AbstractPatternSniff.php",
-                    "CodeSniffer/Standards/AbstractScopeSniff.php",
-                    "CodeSniffer/Standards/AbstractVariableSniff.php",
-                    "CodeSniffer/Standards/IncorrectPatternException.php",
-                    "CodeSniffer/Standards/Generic/Sniffs/",
-                    "CodeSniffer/Standards/MySource/Sniffs/",
-                    "CodeSniffer/Standards/PEAR/Sniffs/",
-                    "CodeSniffer/Standards/PSR1/Sniffs/",
-                    "CodeSniffer/Standards/PSR2/Sniffs/",
-                    "CodeSniffer/Standards/Squiz/Sniffs/",
-                    "CodeSniffer/Standards/Zend/Sniffs/"
-                ]
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Greg Sherwood",
-                    "role": "lead"
-                }
-            ],
-            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
-            "homepage": "http://www.squizlabs.com/php-codesniffer",
-            "keywords": [
-                "phpcs",
-                "standards"
-            ],
-            "time": "2016-04-03 22:58:34"
-        },
-        {
-            "name": "symfony/class-loader",
-            "version": "v3.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/class-loader.git",
-                "reference": "cbb7e6a9c0213a0cffa5d9065ee8214ca4e83877"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/symfony-class-loader-cbb7e6a9c0213a0cffa5d9065ee8214ca4e83877-zip-38e127.zip",
-                "reference": "cbb7e6a9c0213a0cffa5d9065ee8214ca4e83877",
-                "shasum": "e904ebb86892b522757126504c049d6ec25e6da1"
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "symfony/finder": "~2.8|~3.0",
-                "symfony/polyfill-apcu": "~1.1"
-            },
-            "suggest": {
-                "symfony/polyfill-apcu": "For using ApcClassLoader on HHVM"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\ClassLoader\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony ClassLoader Component",
-            "homepage": "https://symfony.com",
-            "time": "2016-03-30 10:41:14"
-        },
-        {
             "name": "symfony/config",
             "version": "v3.0.6",
             "source": {
@@ -3296,7 +1992,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/symfony-config-24f155da1ff180df8e15e34a8f6e2f8a0eadefa8-zip-694393.zip",
+                "url": "https://api.github.com/repos/symfony/config/zipball/24f155da1ff180df8e15e34a8f6e2f8a0eadefa8",
                 "reference": "24f155da1ff180df8e15e34a8f6e2f8a0eadefa8",
                 "shasum": "6752f946357b483d66f7170e5689ceca430f820a"
             },
@@ -3349,7 +2045,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/symfony-event-dispatcher-807dde98589f9b2b00624dca326740380d78dbbc-zip-7a2cf2.zip",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/807dde98589f9b2b00624dca326740380d78dbbc",
                 "reference": "807dde98589f9b2b00624dca326740380d78dbbc",
                 "shasum": "5e5a3c5bd703841488e09686ddc0de22bc7969ab"
             },
@@ -3400,55 +2096,6 @@
             "time": "2016-05-05 06:56:13"
         },
         {
-            "name": "symfony/expression-language",
-            "version": "v3.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/expression-language.git",
-                "reference": "98466efcae5b9e8a5dd45b300b0ff54eaa6f3988"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/symfony-expression-language-98466efcae5b9e8a5dd45b300b0ff54eaa6f3988-zip-12d2c0.zip",
-                "reference": "98466efcae5b9e8a5dd45b300b0ff54eaa6f3988",
-                "shasum": "2576b081c5a60aa2a3b92a89c4fc64be12c1358f"
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\ExpressionLanguage\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony ExpressionLanguage Component",
-            "homepage": "https://symfony.com",
-            "time": "2016-03-10 10:34:12"
-        },
-        {
             "name": "symfony/filesystem",
             "version": "v3.0.6",
             "source": {
@@ -3458,7 +2105,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/symfony-filesystem-74fec3511b62cb934b64bce1d96f06fffa4beafd-zip-6f1a56.zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/74fec3511b62cb934b64bce1d96f06fffa4beafd",
                 "reference": "74fec3511b62cb934b64bce1d96f06fffa4beafd",
                 "shasum": "adbefc62385eb65b3d331184f7737ff147f5c79c"
             },
@@ -3507,7 +2154,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/symfony-finder-c54e407b35bc098916704e9fd090da21da4c4f52-zip-2fc9a6.zip",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/c54e407b35bc098916704e9fd090da21da4c4f52",
                 "reference": "c54e407b35bc098916704e9fd090da21da4c4f52",
                 "shasum": "3096e26c345a9a0cd926e2a9b0efcc8c8b5703d2"
             },
@@ -3556,7 +2203,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.madkom.pl/dist/symfony-stopwatch-6015187088421e9499d8f8316bdb396f8b806c06-zip-09418d.zip",
+                "url": "https://api.github.com/repos/symfony/stopwatch/zipball/6015187088421e9499d8f8316bdb396f8b806c06",
                 "reference": "6015187088421e9499d8f8316bdb396f8b806c06",
                 "shasum": "77618584b1ae4547966355d64ae9d29c1be45c61"
             },
@@ -3594,70 +2241,6 @@
             "description": "Symfony Stopwatch Component",
             "homepage": "https://symfony.com",
             "time": "2016-03-04 07:55:57"
-        },
-        {
-            "name": "symfony/translation",
-            "version": "v3.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/translation.git",
-                "reference": "f7a07af51ea067745a521dab1e3152044a2fb1f2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.madkom.pl/dist/symfony-translation-f7a07af51ea067745a521dab1e3152044a2fb1f2-zip-66806e.zip",
-                "reference": "f7a07af51ea067745a521dab1e3152044a2fb1f2",
-                "shasum": "24453c98d121bc81eb6309af88916b533490a8f5"
-            },
-            "require": {
-                "php": ">=5.5.9",
-                "symfony/polyfill-mbstring": "~1.0"
-            },
-            "conflict": {
-                "symfony/config": "<2.8"
-            },
-            "require-dev": {
-                "psr/log": "~1.0",
-                "symfony/config": "~2.8|~3.0",
-                "symfony/intl": "~2.8|~3.0",
-                "symfony/yaml": "~2.8|~3.0"
-            },
-            "suggest": {
-                "psr/log": "To use logging capability in translator",
-                "symfony/config": "",
-                "symfony/yaml": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Translation\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Translation Component",
-            "homepage": "https://symfony.com",
-            "time": "2016-03-25 01:41:20"
         },
         {
             "name": "theseer/fdomdocument",
@@ -3703,7 +2286,9 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "madkom/continuous-integration": 20
+        "phpunit/phpunit": 0,
+        "phpspec/phpspec": 0,
+        "satooshi/php-coveralls": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
