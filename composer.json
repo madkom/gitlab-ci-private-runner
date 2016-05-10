@@ -28,6 +28,7 @@
         "satooshi/php-coveralls": "dev-master",
         "henrikbjorn/phpspec-code-coverage": "^2.0.2"
     },
+    "bin": ["bin/private-gitlab-runner"],
     "scripts": {},
     "config": {
         "bin-dir": "bin/"
