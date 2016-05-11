@@ -27,3 +27,8 @@ See usage of the command by running bin/private-gitlab-runner
 `bin/private-gitlab-runner private-gitlab-ci:job:run job_name` 
 
      Responsible for running specific job in docker environment. 
+     
+### Run stage
+`bin/private-gitlab-runner private-gitlab-ci:stage:run stage_name` 
+
+     Responsible for running all jobs for specfic stage in docker environment.
