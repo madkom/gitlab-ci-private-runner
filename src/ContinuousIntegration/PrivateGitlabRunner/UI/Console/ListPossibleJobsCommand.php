@@ -9,31 +9,27 @@ use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Finder\Finder;
 
 /**
  * Class ListPossibleJobsCommand
  * @package Madkom\ContinuousIntegration\PrivateGitlabRunner\UI\Console
  * @author  Dariusz Gafka <d.gafka@madkom.pl>
  */
-class ListPossibleJobsCommand extends Command
+class ListPossibleJobsCommand extends BaseCommand
 {
     protected function configure()
     {
         $this
-            ->setName('private-gitlab-ci:job:list')
-            ->setDescription('List possible jobs to run.')
-            ->addArgument(
-                'config_ci',
-                InputArgument::REQUIRED,
-                'Path to ".gitlab-ci.yml"'
-            )
+            ->setName('job:list')
+            ->setDescription("List possible jobs to run.\n Example: bin/private-gitlab-runner job:list")
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $diContainer     = new DIContainer();
-        $gitlabCiYmlPath = $input->getArgument('config_ci');
+        $gitlabCiYmlPath = $this->findGitlabConfig();
         
         /** @var GitlabCIConfigurationFactory $gitlabConfigurationFactory */
         $gitlabConfigurationFactory = $diContainer->get(DIContainer::GITLAB_CONFIGURATION_FACTORY);
@@ -50,4 +46,5 @@ class ListPossibleJobsCommand extends Command
 
         $table->render();
     }
+
 }

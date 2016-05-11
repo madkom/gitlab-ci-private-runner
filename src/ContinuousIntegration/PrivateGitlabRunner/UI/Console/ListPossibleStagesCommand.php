@@ -15,25 +15,20 @@ use Symfony\Component\Console\Output\OutputInterface;
  * @package Madkom\ContinuousIntegration\PrivateGitlabRunner\UI\Console
  * @author  Dariusz Gafka <d.gafka@madkom.pl>
  */
-class ListPossibleStagesCommand extends Command
+class ListPossibleStagesCommand extends BaseCommand
 {
     protected function configure()
     {
         $this
-            ->setName('private-gitlab-ci:stage:list')
-            ->setDescription('List all defined stages.')
-            ->addArgument(
-                'config_ci',
-                InputArgument::REQUIRED,
-                'Path to ".gitlab-ci.yml"'
-            )
+            ->setName('stage:list')
+            ->setDescription("List all defined stages.\n bin/private-gitlab-runner stage:list")
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $diContainer     = new DIContainer();
-        $gitlabCiYmlPath = $input->getArgument('config_ci');
+        $gitlabCiYmlPath = $this->findGitlabConfig();
 
         /** @var GitlabCIConfigurationFactory $gitlabConfigurationFactory */
         $gitlabConfigurationFactory = $diContainer->get(DIContainer::GITLAB_CONFIGURATION_FACTORY);
