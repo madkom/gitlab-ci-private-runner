@@ -2,6 +2,7 @@
 
 namespace Madkom\ContinuousIntegration\PrivateGitlabRunner\Infrastructure\Service;
 
+use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Configuration\Job;
 use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\PrivateRunnerException;
 use Symfony\Component\Process\Process;
 
@@ -12,27 +13,23 @@ use Symfony\Component\Process\Process;
  */
 class ProcessRunner implements \Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Runner\ProcessRunner
 {
+
     /**
-     * @param string $processCommand
-     *
-     * @return string
-     * @throws PrivateRunnerException
+     * @inheritdoc
      */
-    public function runProcess($processCommand)
+    public function runProcess(Job $job, $processCommand)
     {
         $process = new Process($processCommand);
         $process->setTimeout(720);
 
-        $process->run(function ($type, $buffer) {
+        $process->start(function ($type, $buffer) use ($job) {
             if (\Symfony\Component\Process\Process::ERR === $type) {
-                echo 'ERR > ' . $buffer;
+                echo "\e[33m{$job->jobName()}: \e[31mSTDERR > " . $buffer;
             } else {
-                echo $buffer;
+                echo "\e[33m{$job->jobName()}: \e[32mSTDOUT > " . $buffer;
             }
         });
 
-        if (!$process->isSuccessful()) {
-            throw new PrivateRunnerException("Can't process job runner. Problem occurred with handling command: `{$processCommand}`");
-        }
+        return new SymfonyProcess($process);
     }
 }

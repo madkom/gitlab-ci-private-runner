@@ -117,6 +117,18 @@ class GitlabCIConfigurationFactorySpec extends ObjectBehavior
         $this->shouldThrow(PrivateRunnerException::class)->during('createFromYaml', [vfsStream::url('root/test/.gitlab-ci.yml')]);
     }
 
+    function it_should_return_job_names_for_specific_stage()
+    {
+        $gitlabCIConfiguration = $this->createFromYaml(vfsStream::url('root/project/gitlab.ci.yml'));
+        $gitlabCIConfiguration->getJobsForStage('transfer-changes-phase')->shouldReturn([
+            'phpspec_php_5_6',
+            'lint_php_5_6'
+        ]);
+        $gitlabCIConfiguration->getJobsForStage('artifact-clean')->shouldReturn([
+            'clean_up'
+        ]);
+    }
+
     public function getMatchers()
     {
         return [

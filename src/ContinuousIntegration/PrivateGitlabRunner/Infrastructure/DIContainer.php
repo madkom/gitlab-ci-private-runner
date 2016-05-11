@@ -4,8 +4,9 @@ namespace Madkom\ContinuousIntegration\PrivateGitlabRunner\Infrastructure;
 
 use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Configuration\GitlabCIConfigurationFactory;
 use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Configuration\JobFactory;
-use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Runner\DockerRunCommandBuilder;
-use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Runner\JobRunner;
+use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Docker\ConsoleCommandFactory;
+use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Docker\DockerRunCommandBuilder;
+use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Runner\ParallelJobRunner;
 use Madkom\ContinuousIntegration\PrivateGitlabRunner\Infrastructure\Service\ProcessRunner;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -20,7 +21,7 @@ use Symfony\Component\Yaml\Parser;
 class DIContainer
 {
     const GITLAB_CONFIGURATION_FACTORY = 'gitlab_configuration_factory';
-    const JOB_RUNNER = 'job_runner';
+    const PARALLEL_JOB_RUNNER          = 'parallel_job_runner';
 
     /** @var Container */
     private $container;
@@ -41,15 +42,19 @@ class DIContainer
             ->register('docker_run_command_builder', DockerRunCommandBuilder::class)
             ->setPublic(false);
         $container
+            ->register('console_command_factory', ConsoleCommandFactory::class)
+            ->addArgument(new Reference('docker_run_command_builder'))
+            ->setPublic(false);
+        $container
             ->register('gitlab_configuration_factory', GitlabCIConfigurationFactory::class)
             ->addArgument(new Reference('job_factory'))
             ->addArgument(new Reference('yaml_parser'))
             ->setShared(true);
         $container
-            ->register('job_runner', JobRunner::class)
-            ->addArgument(new Reference('gitlab_configuration_factory'))
-            ->addArgument(new Reference('docker_run_command_builder'))
+            ->register(self::PARALLEL_JOB_RUNNER, ParallelJobRunner::class)
             ->addArgument(new Reference('process_runner'))
+            ->addArgument(new Reference('console_command_factory'))
+            ->addArgument(new Reference('gitlab_configuration_factory'))
             ->setShared(true);
 
         $this->container = $container;
@@ -64,4 +69,13 @@ class DIContainer
     {
         return $this->container->get($name);
     }
+
+    /**
+     * @return ParallelJobRunner
+     */
+    public function getParallelJobRunner()
+    {
+        return $this->get(self::PARALLEL_JOB_RUNNER);
+    }
+
 }

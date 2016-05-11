@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Runner;
+namespace spec\Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Docker;
 
 use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\PrivateRunnerException;
-use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Runner\DockerRunCommandBuilder;
+use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Docker\DockerRunCommandBuilder;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -17,7 +17,7 @@ class DockerRunCommandBuilderSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Runner\DockerRunCommandBuilder');
+        $this->shouldHaveType('Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Docker\DockerRunCommandBuilder');
     }
 
     function it_should_return_values_it_was_constructed_with()

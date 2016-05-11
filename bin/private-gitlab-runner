@@ -15,4 +15,5 @@ $application = new Application();
 $application->add(new \Madkom\ContinuousIntegration\PrivateGitlabRunner\UI\Console\ListPossibleJobsCommand());
 $application->add(new \Madkom\ContinuousIntegration\PrivateGitlabRunner\UI\Console\ListPossibleStagesCommand());
 $application->add(new \Madkom\ContinuousIntegration\PrivateGitlabRunner\UI\Console\RunJobCommand());
+$application->add(new \Madkom\ContinuousIntegration\PrivateGitlabRunner\UI\Console\RunStageCommand());
 $application->run();

@@ -15,3 +15,4 @@ app/data/*
 !tests/coverage/.gitkeep
 /tests/pdepend/*
 !tests/pdepend/.gitkeep
+.gitlab-ci.yml

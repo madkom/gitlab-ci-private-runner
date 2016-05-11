@@ -102,6 +102,23 @@ class GitlabCIConfiguration
     }
 
     /**
+     * @param string $stageName
+     *
+     * @return array
+     */
+    public function getJobsForStage($stageName)
+    {
+        $jobNames = [];
+        foreach ($this->jobs as $job) {
+            if ($job->stage()->name() == $stageName) {
+                $jobNames[] = $job->jobName();
+            }
+        }
+
+        return $jobNames;
+    }
+
+    /**
      * @param array $stages
      *
      * @throws PrivateRunnerException

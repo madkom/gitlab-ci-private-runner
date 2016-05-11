@@ -2,7 +2,7 @@
 
 namespace Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Runner;
 
-use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\PrivateRunnerException;
+use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Configuration\Job;
 
 /**
  * Class ProcessRunner
@@ -13,11 +13,11 @@ interface ProcessRunner
 {
 
     /**
+     * @param Job    $jobName
      * @param string $processCommand
-     * 
-     * @return string
-     * @throws PrivateRunnerException
+     *
+     * @return Process
      */
-    public function runProcess($processCommand);
+    public function runProcess(Job $jobName, $processCommand);
 
 }

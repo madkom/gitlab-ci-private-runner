@@ -1,6 +1,6 @@
 <?php
 
-namespace Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Runner;
+namespace Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Docker;
 
 use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\PrivateRunnerException;
 

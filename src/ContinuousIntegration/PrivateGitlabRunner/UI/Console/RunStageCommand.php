@@ -2,30 +2,28 @@
 
 namespace Madkom\ContinuousIntegration\PrivateGitlabRunner\UI\Console;
 
-use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Runner\JobRunner;
 use Madkom\ContinuousIntegration\PrivateGitlabRunner\Infrastructure\DIContainer;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Class RunJobCommand
+ * Class RunStageCommand
  * @package Madkom\ContinuousIntegration\PrivateGitlabRunner\UI\Console
  * @author  Dariusz Gafka <d.gafka@madkom.pl>
  */
-class RunJobCommand extends BaseCommand
+class RunStageCommand extends BaseCommand
 {
     protected function configure()
     {
         $this
-            ->setName('job:run')
-            ->setDescription("Run gitlab-ci job in docker.\n Example: bin/private-gitlab-runner job:run phpspec_php_5_6 --sleep_time=20 --ref_name=test --map_volume=/artificat_repository:/artifact_repository")
+            ->setName('stage:run')
+            ->setDescription("Run gitlab-ci jobs for specified stage in docker.\n Example: bin/private-gitlab-runner stage:run phpspec_php_5_6 phpunit_php_5_6 --sleep_time=20 --ref_name=test --map_volume=/artificat_repository:/artifact_repository")
             ->addArgument(
-                'job_name',
+                'stage_name',
                 InputArgument::REQUIRED,
-                'Name of the job to run'
+                'Name of stage to run'
             )
             ->addOption(
                 'ref_name',
@@ -51,16 +49,17 @@ class RunJobCommand extends BaseCommand
         ;
     }
 
+
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $diContainer     = new DIContainer();
         $gitlabCiYmlPath = $this->findGitlabConfig();
-        $jobName         = $input->getArgument('job_name');
+        $stageName       = $input->getArgument('stage_name');
         $refName         = $input->getOption('ref_name');
         $sleepTime       = $input->getOption('sleep_time');
         $mappedVolumes   = $input->getOption('map_volume');
-
+        
         $jobRunner = $diContainer->getParallelJobRunner();
-        $jobRunner->runJobs([$jobName], $gitlabCiYmlPath, $refName, $sleepTime, $mappedVolumes);
+        $jobRunner->runStage($stageName, $gitlabCiYmlPath, $refName, $sleepTime, $mappedVolumes);
     }
 }
