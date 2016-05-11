@@ -3,7 +3,6 @@
 namespace Madkom\ContinuousIntegration\PrivateGitlabRunner\Infrastructure\Service;
 
 use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Configuration\Job;
-use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\PrivateRunnerException;
 use Symfony\Component\Process\Process;
 
 /**
