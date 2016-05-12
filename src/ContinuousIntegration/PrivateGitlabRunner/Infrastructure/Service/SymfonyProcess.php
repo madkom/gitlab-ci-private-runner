@@ -2,6 +2,7 @@
 
 namespace Madkom\ContinuousIntegration\PrivateGitlabRunner\Infrastructure\Service;
 
+use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Configuration\Job;
 use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Runner\Process;
 
 /**
@@ -12,6 +13,10 @@ use Madkom\ContinuousIntegration\PrivateGitlabRunner\Domain\Runner\Process;
 class SymfonyProcess implements Process
 {
     /**
+     * @var Job
+     */
+    private $job;
+    /**
      * @var \Symfony\Component\Process\Process
      */
     private $symfonyProcess;
@@ -19,10 +24,12 @@ class SymfonyProcess implements Process
     /**
      * SymfonyProcess constructor.
      *
+     * @param Job                                $job
      * @param \Symfony\Component\Process\Process $symfonyProcess
      */
-    public function __construct(\Symfony\Component\Process\Process $symfonyProcess)
+    public function __construct(Job $job, \Symfony\Component\Process\Process $symfonyProcess)
     {
+        $this->job = $job;
         $this->symfonyProcess = $symfonyProcess;
     }
 
@@ -39,7 +46,11 @@ class SymfonyProcess implements Process
      */
     public function isSuccessful()
     {
-        return $this->symfonyProcess->isRunning();
+        if ($this->symfonyProcess->isSuccessful()) {
+            echo "\e[33m{$this->job->jobName()}: \e[36mHas finished without errors.";
+        }
+
+        return $this->symfonyProcess->isSuccessful();
     }
 
 }

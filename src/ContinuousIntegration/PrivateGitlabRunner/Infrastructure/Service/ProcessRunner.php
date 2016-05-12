@@ -29,6 +29,6 @@ class ProcessRunner implements \Madkom\ContinuousIntegration\PrivateGitlabRunner
             }
         });
 
-        return new SymfonyProcess($process);
+        return new SymfonyProcess($job, $process);
     }
 }
