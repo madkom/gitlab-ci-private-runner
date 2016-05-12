@@ -47,7 +47,7 @@ class SymfonyProcess implements Process
     public function isSuccessful()
     {
         if ($this->symfonyProcess->isSuccessful()) {
-            echo "\e[33m{$this->job->jobName()}: \e[36mHas finished without errors.";
+            echo "\e[33m{$this->job->jobName()}: \e[36mHas finished without errors.\n";
         }
 
         return $this->symfonyProcess->isSuccessful();
